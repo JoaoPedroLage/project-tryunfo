@@ -10,7 +10,7 @@ describe("1 - Crie o formulário que será usado para adicionar cartas ao baralh
     expect(nameInput).toBeInTheDocument();
   });
 
-  it.only("Será validado se existe um input textarea que possui o `data-testid='description-input'`", () => {
+  it("Será validado se existe um input textarea que possui o `data-testid='description-input'`", () => {
     render(<App />);
     const descName = screen.getByTestId(/description-input/i);
     expect(descName).toBeInTheDocument();
