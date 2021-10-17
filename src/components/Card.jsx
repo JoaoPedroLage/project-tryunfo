@@ -17,14 +17,14 @@ export default class Card extends React.Component {
       <>
         <h1 data-testid="name-card">{ cardName }</h1>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        <h2 data-testid="description-card">{ cardDescription }</h2>
+        <h3 data-testid="description-card">{ cardDescription }</h3>
         <div>
           <p data-testid="attr1-card">{ cardAttr1 }</p>
           <p data-testid="attr2-card">{ cardAttr2 }</p>
           <p data-testid="attr3-card">{ cardAttr3 }</p>
         </div>
-        <h3 data-testid="rare-card">{ cardRare }</h3>
-        { cardTrunfo ? <h4 data-testid="trunfo-card">Super Trunfo</h4> : ''}
+        <h2 data-testid="rare-card">{ cardRare }</h2>
+        { cardTrunfo ? <h2 data-testid="trunfo-card">Super Trunfo</h2> : ''}
       </>
     );
   }

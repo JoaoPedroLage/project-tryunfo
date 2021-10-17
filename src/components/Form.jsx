@@ -84,16 +84,18 @@ export default class Form extends React.Component {
           />
         </label>
         <br />
+        Qual a raridade da carta?
         <select
           name="cardRare"
           data-testid="rare-input"
           value={ cardRare }
           onChange={ onInputChange }
         >
-          <option>normal</option>
-          <option>raro</option>
-          <option>muito raro</option>
+          <option>Normal</option>
+          <option>Raro</option>
+          <option>Muito Raro</option>
         </select>
+        <br />
         <label htmlFor="trunfo-input">
           Essa carta é super trunfo?
           <input

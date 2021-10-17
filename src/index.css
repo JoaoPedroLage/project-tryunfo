@@ -12,3 +12,37 @@ code {
     monospace;
 }
 
+img {
+  width: 400px;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+}
+
+form-preview {
+  width: 500px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;  
+}
+
+input {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

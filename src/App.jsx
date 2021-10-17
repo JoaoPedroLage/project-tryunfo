@@ -17,7 +17,7 @@ export default class App extends React.Component {
       cardAttr2: '0',
       cardAttr3: '0',
       cardImage: '',
-      cardRare: 'normal',
+      cardRare: 'Normal',
       cardTrunfo: false,
       hasTrunfo: false,
       isSaveButtonDisabled: true,
@@ -41,17 +41,19 @@ export default class App extends React.Component {
     return (
       <>
         <div>
-          <h1>Tryunfo</h1>
+          <header>
+            <h1>Tryunfo</h1>
+          </header>
         </div>
         <main>
-          <div>
+          <div className="form">
             <Form
               { ...this.state }
               onInputChange={ this.onInputChange }
               onSaveButtonClick={ this.onSaveButtonClick }
             />
           </div>
-          <div>
+          <div className="form-preview">
             <Card
               { ...this.state }
             />
