@@ -91,9 +91,9 @@ export default class Form extends React.Component {
           value={ cardRare }
           onChange={ onInputChange }
         >
-          <option>Normal</option>
-          <option>Raro</option>
-          <option>Muito Raro</option>
+          <option>normal</option>
+          <option>raro</option>
+          <option>muito raro</option>
         </select>
         <br />
         <label htmlFor="trunfo-input">
