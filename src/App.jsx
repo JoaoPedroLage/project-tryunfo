@@ -3,6 +3,19 @@ import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
 
+const cleanState = {
+  cardName: '',
+  cardDescription: '',
+  cardAttr1: '0',
+  cardAttr2: '0',
+  cardAttr3: '0',
+  cardImage: '',
+  cardRare: 'normal',
+  cardTrunfo: false,
+  hasTrunfo: false,
+  isSaveButtonDisabled: true,
+};
+
 export default class App extends React.Component {
   constructor() {
     super();
@@ -12,16 +25,8 @@ export default class App extends React.Component {
     this.checkCorrectlyFill = this.checkCorrectlyFill.bind(this);
 
     this.state = {
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '0',
-      cardAttr2: '0',
-      cardAttr3: '0',
-      cardImage: '',
-      cardRare: 'normal',
-      cardTrunfo: false,
-      hasTrunfo: false,
-      isSaveButtonDisabled: true,
+      ...cleanState,
+      saveCards: [],
     };
   }
 
@@ -36,6 +41,10 @@ export default class App extends React.Component {
 
   onSaveButtonClick(event) {
     event.preventDefault();
+
+    const { saveCards } = this.state;
+    saveCards.push({ ...this.state });
+    this.setState({ ...cleanState });
   }
 
   checkCorrectlyFill() {
