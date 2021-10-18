@@ -20,7 +20,8 @@ section {
 }
 
 img {
-  width: 400px;
+  width: 300px;
+  border: solid gray 1px;
 }
 
 header {

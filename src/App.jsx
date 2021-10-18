@@ -49,21 +49,23 @@ export default class App extends React.Component {
     } = this.state;
 
     const textFill = [];
-    textFill.push(cardName, cardDescription, cardImage);
-    const checkTextFill = textFill.every((fill) => fill.length > 0);
+    const attrFill = [];
 
     const attr1 = Number(cardAttr1);
     const attr2 = Number(cardAttr2);
     const attr3 = Number(cardAttr3);
-    const maxAttribute = 90;
-    const minAttribute = 0;
-    const sumMaxAttributes = 210;
+    const maxAttr = 90;
+    const minAttr = 0;
+    const sumMaxAttrs = 210;
 
-    if (attr1 >= minAttribute && attr1 <= maxAttribute
-      && attr2 >= minAttribute && attr2 <= maxAttribute
-      && attr3 >= minAttribute && attr3 <= maxAttribute
-      && attr1 + attr2 + attr3 <= sumMaxAttributes
-      && checkTextFill === true) {
+    textFill.push(cardName, cardDescription, cardImage);
+    attrFill.push(cardAttr1, cardAttr2, cardAttr3);
+
+    const checkTextFill = textFill.every((text) => text.length > 0);
+    const checkAttrFill = attrFill.every((attr) => attr >= minAttr && attr <= maxAttr);
+
+    if (checkTextFill && checkAttrFill === true
+      && attr1 + attr2 + attr3 <= sumMaxAttrs) {
       this.setState({ isSaveButtonDisabled: false });
     } else this.setState({ isSaveButtonDisabled: true });
   }
