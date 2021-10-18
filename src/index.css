@@ -12,12 +12,20 @@ code {
     monospace;
 }
 
+section {
+  width: 45%;
+  border: solid black 1px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
 img {
   width: 400px;
 }
 
 header {
   text-align: center;
+  margin-bottom: 50px;
 }
 
 main {
@@ -25,10 +33,6 @@ main {
   flex-direction: row;
   justify-content: space-around;
   text-align: center;
-}
-
-form-preview {
-  width: 500px;
 }
 
 form {

@@ -17,7 +17,7 @@ export default class Form extends React.Component {
       onSaveButtonClick } = this.props;
 
     return (
-      <form onSubmit={ onSaveButtonClick }>
+      <form>
         <label htmlFor="name-input">
           Nome da carta:
           <input
