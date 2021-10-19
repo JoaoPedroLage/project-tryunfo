@@ -19,6 +19,11 @@ section {
   margin-bottom: 50px;
 }
 
+saved-cards {
+  display: flex;
+  flex-direction: column;
+}
+
 img {
   width: 300px;
   border: solid gray 1px;

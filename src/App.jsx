@@ -22,6 +22,8 @@ export default class App extends React.Component {
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.checkHasTrunfo = this.checkHasTrunfo.bind(this);
+    this.displaySavedCards = this.displaySavedCards.bind(this);
     this.checkCorrectlyFill = this.checkCorrectlyFill.bind(this);
 
     this.state = {
@@ -41,18 +43,17 @@ export default class App extends React.Component {
 
   onSaveButtonClick(event) {
     event.preventDefault();
-    const { cardTrunfo } = this.state;
-
     const { saveCards } = this.state;
+
     saveCards.push({ ...this.state });
     this.setState({ ...cleanState });
-    if (cardTrunfo === true) this.setState({ hasTrunfo: true });
+    this.checkHasTrunfo();
   }
 
   checkHasTrunfo() {
-    const { saveCards } = this.state;
+    const { cardTrunfo } = this.state;
 
-    saveCards.some((cards) => cards.hasTrunfo === true);
+    if (cardTrunfo === true) this.setState({ hasTrunfo: true });
   }
 
   checkCorrectlyFill() {
@@ -87,6 +88,12 @@ export default class App extends React.Component {
     } else this.setState({ isSaveButtonDisabled: true });
   }
 
+  displaySavedCards() {
+    const { saveCards } = this.state;
+
+    return saveCards.map((render) => (<Card { ...render } key={ render.cardName } />));
+  }
+
   render() {
     return (
       <>
@@ -105,6 +112,9 @@ export default class App extends React.Component {
             <Card
               { ...this.state }
             />
+          </section>
+          <section className="saved-cards">
+            { this.displaySavedCards() }
           </section>
         </main>
       </>
