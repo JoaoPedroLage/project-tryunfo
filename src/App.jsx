@@ -32,7 +32,7 @@ export default class App extends React.Component {
 
   onInputChange({ target }) {
     const { name } = target;
-    const value = target.value === 'checkbox' ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
 
     this.setState({
       [name]: value,
@@ -41,10 +41,18 @@ export default class App extends React.Component {
 
   onSaveButtonClick(event) {
     event.preventDefault();
+    const { cardTrunfo } = this.state;
 
     const { saveCards } = this.state;
     saveCards.push({ ...this.state });
     this.setState({ ...cleanState });
+    if (cardTrunfo === true) this.setState({ hasTrunfo: true });
+  }
+
+  checkHasTrunfo() {
+    const { saveCards } = this.state;
+
+    saveCards.some((cards) => cards.hasTrunfo === true);
   }
 
   checkCorrectlyFill() {
