@@ -12,16 +12,17 @@ code {
     monospace;
 }
 
-section {
+.form, .form-preview {
   width: 45%;
   border: solid black 1px;
   padding: 10px;
   margin-bottom: 50px;
+  margin-left: 10px;
 }
 
-saved-cards {
+.saved-cards {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 img {
