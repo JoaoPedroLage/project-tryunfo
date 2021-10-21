@@ -14,7 +14,7 @@ export default class Card extends React.Component {
       cardTrunfo } = this.props;
 
     return (
-      <>
+      <div className="space-card">
         <h1 data-testid="name-card">{ cardName }</h1>
         <img data-testid="image-card" src={ cardImage } alt={ cardName } />
         <h3 data-testid="description-card">{ cardDescription }</h3>
@@ -26,7 +26,7 @@ export default class Card extends React.Component {
         <h2 data-testid="rare-card">{ cardRare }</h2>
         { cardTrunfo ? <h2 data-testid="trunfo-card">Super Trunfo</h2>
           : ''}
-      </>
+      </div>
     );
   }
 }

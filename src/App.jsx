@@ -113,10 +113,13 @@ export default class App extends React.Component {
               { ...this.state }
             />
           </section>
+        </main>
+        <div className="saved-cards-div">
+          <h2>Saved Cards</h2>
           <section className="saved-cards">
             { this.displaySavedCards() }
           </section>
-        </main>
+        </div>
       </>
     );
   }
